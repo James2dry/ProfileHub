@@ -1,0 +1,113 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(to bottom, #000428, #004e92), url('https://www.solarsystemscope.com/textures/download/8k_stars_milky_way.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    color: white;
+}
+
+.container {
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+    z-index: 1;
+}
+
+.badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0;
+    padding: 15px 35px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+    position: relative;
+    opacity: 0;
+    animation: fadeIn 1s forwards, badgeFloat 4s infinite ease-in-out;
+}
+
+.badge img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.badge:hover {
+    transform: scale(1.2);
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.badge.roblox {
+    background-color: #FF4433;
+    color: white;
+}
+.badge.spotify {
+    background-color: #1DB954;
+    color: white;
+}
+.badge.x {
+    background-color: #000000;
+    color: white;
+}
+.badge.steam {
+    background-color: #00ADEE;
+    color: white;
+}
+.badge.roblox-account {
+    background-color: #FF4433;
+    color: white;
+}
+.badge.youtube {
+    background-color: #FF0000;
+    color: white;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes badgeFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 5s infinite, starMovement 20s linear infinite;
+    z-index: 0;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 0; }
+}
+
+@keyframes starMovement {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+}
